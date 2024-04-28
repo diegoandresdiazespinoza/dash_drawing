@@ -41,7 +41,7 @@ function processImage() {
     var formData = new FormData(document.getElementById('imageForm'));
     $.ajax({
         type: 'POST',
-        url: '/process',
+        url: '/drawingDash/process',
         data: formData,
         contentType: false,
         processData: false,
