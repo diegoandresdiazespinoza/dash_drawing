@@ -49,14 +49,14 @@ function processImage() {
         formData.append('file', document.getElementById('fileInput').files[0]);
         console.log(document.getElementById('fileInput').files[0].name)
     } else {
-        formData.append("file", "web_app/static/default.png")
+        formData.append("file", "static/default.png")
     }
     let color = document.getElementById('colorPicker').value;
     formData.append('line_color', color);
 
     $.ajax({
         type: 'POST',
-        url: '/process',
+        url: '/drawingDash/process',
         data: formData,
         contentType: false,
         processData: false,
@@ -80,7 +80,7 @@ $(document).on('change', '#fileInput', function() {
     }
 });
 
-$(document).on('input', '#dashLength, #spaceLength', function() {
+$(document).on('input', '#dashLength, #spaceLength, #colorPicker', function() {
     if (document.getElementById('fileInput').files.length > 0 || $('#uploadedImage').attr('src')) {
         processImage(); // Also call when any slider changes, if a file is already selected
     }

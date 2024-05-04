@@ -34,10 +34,10 @@ def create_dashed_line(img, points, dash_length=20, space_length=10, color=(0, 0
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    default_image = 'web_app/static/default.png'
+    default_image = 'static/default.png'
     processed_image = json.loads(process(default_image).get_data())["image"]
     print(processed_image)
-    return render_template('index.html', default_image=f'/static/default.png',
+    return render_template('index.html', default_image=f'/drawingDash/static/default.png',
                            processed_image=f'{processed_image}')
 
     # return render_template('index.html')
@@ -88,4 +88,4 @@ def process(_default_image=None):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, port=5003, host="0.0.0.0")
