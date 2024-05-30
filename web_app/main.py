@@ -56,7 +56,7 @@ def process(_default_image=None):
     else:
         file = request.files.get('file')
         # Use .get to avoid KeyError
-    dash_length = int(request.form.get('dash_length', 20))
+    dash_length = int(request.form.get('dash_length', 5))
     space_length = int(request.form.get('space_length', 10))
     line_color = hex_to_rgb(request.form.get('line_color', '#000000'))
 
