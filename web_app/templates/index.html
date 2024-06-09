@@ -13,7 +13,7 @@
     <form id="imageForm" enctype="multipart/form-data">
         <div class="form-group">
             <label for="fileInput">Subir imagen:</label>
-            <input type="file" class="form-control-file" id="fileInput" name="file" required>
+            <input type="file" class="form-control-file" id="fileInput" name="file" accept=".jpg,.png" required>
         </div>
         <div class="form-group">
             <label for="dashLength">Largo del trazo</label>
@@ -56,7 +56,7 @@ function processImage() {
 
     $.ajax({
         type: 'POST',
-        url: '/drawingDash/process',
+        url: '/process_path_numbers',
         data: formData,
         contentType: false,
         processData: false,
